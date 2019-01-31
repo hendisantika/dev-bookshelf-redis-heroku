@@ -1,11 +1,11 @@
 package com.chrisbaileydeveloper.bookshelf;
 
+import com.chrisbaileydeveloper.bookshelf.config.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.Banner;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
-
-import com.chrisbaileydeveloper.bookshelf.config.Constants;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 /**
  * This is a helper Java class that provides an alternative to creating a web.xml.
@@ -17,7 +17,8 @@ public class ApplicationWebXml extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.profiles(addDefaultProfile())
-                .showBanner(false)
+//                .showBanner(false)
+                .bannerMode(Banner.Mode.OFF)
                 .sources(Application.class);
     }
 

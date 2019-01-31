@@ -1,21 +1,20 @@
 package com.chrisbaileydeveloper.bookshelf;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.Arrays;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
+import com.chrisbaileydeveloper.bookshelf.config.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.SimpleCommandLinePropertySource;
 
-import com.chrisbaileydeveloper.bookshelf.config.Constants;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
 
 @SpringBootApplication
 public class Application {
@@ -41,7 +40,8 @@ public class Application {
      */
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(Application.class);
-        app.setShowBanner(false);
+//        app.setShowBanner(false);
+        app.setBannerMode(Banner.Mode.OFF);
 
         SimpleCommandLinePropertySource source = new SimpleCommandLinePropertySource(args);
 

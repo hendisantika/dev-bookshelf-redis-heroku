@@ -1,22 +1,18 @@
 package com.chrisbaileydeveloper.bookshelf.service;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import javax.inject.Inject;
-
+import com.chrisbaileydeveloper.bookshelf.config.Constants;
+import com.chrisbaileydeveloper.bookshelf.domain.Book;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.chrisbaileydeveloper.bookshelf.Application;
-import com.chrisbaileydeveloper.bookshelf.config.Constants;
-import com.chrisbaileydeveloper.bookshelf.domain.Book;
+import javax.inject.Inject;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Test class for the BookServiceImpl service.
@@ -24,10 +20,8 @@ import com.chrisbaileydeveloper.bookshelf.domain.Book;
  * @see BookService
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
 @ActiveProfiles(Constants.SPRING_PROFILE_DEVELOPMENT)
 @WebAppConfiguration
-@IntegrationTest
 @Transactional
 public class BookServiceTest {
 	private static final String EXPECTED_NAME = "Effective Java";
